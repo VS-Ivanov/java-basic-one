@@ -14,6 +14,9 @@ public class MainApp {
         checkSign(166,9,14);
         checkSign(-166,9,15);
 
+        System.out.println("\n> hw2.3");
+        selectColor();
+
 
     }
 
@@ -27,6 +30,17 @@ public class MainApp {
             System.out.println("Сумма положительная");
         } else {
             System.out.println("Сумма отрицательная");
+        }
+    }
+
+    public static void selectColor() {
+        int data = 8;
+        if(data <= 10) {
+            System.out.println("Красный");
+        } else if (data > 10 && data <= 20) {
+            System.out.println("Желтый");
+        } else {
+            System.out.println("Зеленый");
         }
     }
 }
