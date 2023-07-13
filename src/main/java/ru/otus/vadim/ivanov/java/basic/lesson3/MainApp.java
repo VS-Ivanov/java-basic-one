@@ -20,6 +20,8 @@ public class MainApp {
         System.out.println("\n> hw2.4");
         compareNumbers();
 
+        System.out.println("\n> hw2.5");
+        addOrSubtractAndPrint(166, 6, true);
 
     }
 
@@ -55,6 +57,14 @@ public class MainApp {
             System.out.println("a >= b");
         } else {
             System.out.println("a < b");
+        }
+    }
+
+    public static void addOrSubtractAndPrint(int initValue, int delta, boolean increment) {
+        if(increment){
+            System.out.println(initValue + delta);
+        } else {
+            System.out.println(initValue - delta);
         }
     }
 }
