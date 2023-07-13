@@ -1,5 +1,7 @@
 package ru.otus.vadim.ivanov.java.basic.lesson3;
 
+import java.util.Scanner;
+
 public class MainApp {
 
     public static void main(String[] args) {
@@ -22,6 +24,33 @@ public class MainApp {
 
         System.out.println("\n> hw2.5");
         addOrSubtractAndPrint(166, 6, true);
+
+        System.out.println("\n> hw2.*");
+
+        Scanner sc = new Scanner(System.in);
+        int MethodNumber = sc.nextInt();
+
+        if(MethodNumber == 1) {
+            greetings();
+        } else if (MethodNumber == 2) {
+            int a = (int) (Math.random() * Integer.MAX_VALUE);
+            int b = (int) (Math.random() * Integer.MAX_VALUE);
+            int c = (int) (Math.random() * Integer.MAX_VALUE);
+            System.out.println("Random args: a="+a+", b="+b+", c="+c);
+            checkSign(a,b,c);
+        } else if (MethodNumber == 3) {
+            selectColor();
+        } else if (MethodNumber == 4) {
+            compareNumbers();
+        } else if (MethodNumber == 5) {
+            int initValue = (int) (Math.random() * Integer.MAX_VALUE);
+            int delta = (int) (Math.random() * Integer.MAX_VALUE);
+            boolean increment = Math.random() < 0.5;
+            System.out.println("Random args: initValue="+initValue+", delta="+delta+", increment="+increment);
+            addOrSubtractAndPrint(initValue, delta, increment);
+        } else {
+            System.out.println("Вы ввели неправильное число");
+        }
 
     }
 
