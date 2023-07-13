@@ -17,6 +17,9 @@ public class MainApp {
         System.out.println("\n> hw2.3");
         selectColor();
 
+        System.out.println("\n> hw2.4");
+        compareNumbers();
+
 
     }
 
@@ -41,6 +44,17 @@ public class MainApp {
             System.out.println("Желтый");
         } else {
             System.out.println("Зеленый");
+        }
+    }
+
+    public static void compareNumbers() {
+        int a = 8;
+        int b = 17;
+
+        if(a >= b) {
+            System.out.println("a >= b");
+        } else {
+            System.out.println("a < b");
         }
     }
 }
