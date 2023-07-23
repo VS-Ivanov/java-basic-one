@@ -19,6 +19,12 @@ public class MainApp5 {
         System.out.println(Arrays.toString(arr2));
         fillArray(arr2,3);
         System.out.println(Arrays.toString(arr2));
+
+        System.out.println("> hw3.4");
+        int[] arr3 = {4,4,5,6,44,34,1,7};
+        System.out.println(Arrays.toString(arr3));
+        incArrayElement(arr3,5);
+        System.out.println(Arrays.toString(arr3));
     }
 
     public static void printString(int n, String str) {
@@ -42,6 +48,13 @@ public class MainApp5 {
         //заполняем каждый элемент массива указанным числом
         for(int i = 0; i < arr.length; i++){
             arr[i] = n;
+        }
+    }
+
+    public static void incArrayElement(int[] arr, int n) {
+        //увеличиваем каждый элемент массива на некоторое число
+        for(int i = 0; i < arr.length; i++) {
+            arr[i] += n;
         }
     }
 }
