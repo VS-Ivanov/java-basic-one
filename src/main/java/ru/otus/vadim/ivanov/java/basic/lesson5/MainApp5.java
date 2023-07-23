@@ -25,6 +25,11 @@ public class MainApp5 {
         System.out.println(Arrays.toString(arr3));
         incArrayElement(arr3,5);
         System.out.println(Arrays.toString(arr3));
+
+        System.out.println("> hw3.5");
+        int[] arr4 = {5,6,7,8,1,3};
+        System.out.println(Arrays.toString(arr4));
+        printGreatestArraySum(arr4);
     }
 
     public static void printString(int n, String str) {
@@ -55,6 +60,30 @@ public class MainApp5 {
         //увеличиваем каждый элемент массива на некоторое число
         for(int i = 0; i < arr.length; i++) {
             arr[i] += n;
+        }
+    }
+
+    public static void printGreatestArraySum(int[] arr) {
+        //Находим и печатаем сумму наибольшей части четного массива
+        int sum1 = 0;
+        for(int i = 0; i < arr.length /2; i++) {
+            sum1 += arr[i];
+        }
+
+        int sum2 = 0;
+        for(int i = arr.length/2; i < arr.length; i++) {
+            sum2 += arr[i];
+        }
+
+        System.out.println("Left part sum: "+ sum1);
+        System.out.println("Right part sum: "+sum2);
+
+        if(sum1 > sum2) {
+            System.out.println("Left part sum is greatest.");
+        } else if (sum1 < sum2) {
+            System.out.println("Right part is greatest.");
+        } else {
+            System.out.println("Sums are equal");
         }
     }
 }
