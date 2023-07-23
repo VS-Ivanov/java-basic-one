@@ -28,28 +28,40 @@ public class MainApp {
         System.out.println("\n> hw2.*");
 
         Scanner sc = new Scanner(System.in);
-        int MethodNumber = sc.nextInt();
+        int methodNumber = sc.nextInt();
 
-        if(MethodNumber == 1) {
-            greetings();
-        } else if (MethodNumber == 2) {
-            int a = (int) (Math.random() * Integer.MAX_VALUE);
-            int b = (int) (Math.random() * Integer.MAX_VALUE);
-            int c = (int) (Math.random() * Integer.MAX_VALUE);
-            System.out.println("Random args: a="+a+", b="+b+", c="+c);
-            checkSign(a,b,c);
-        } else if (MethodNumber == 3) {
-            selectColor();
-        } else if (MethodNumber == 4) {
-            compareNumbers();
-        } else if (MethodNumber == 5) {
-            int initValue = (int) (Math.random() * Integer.MAX_VALUE);
-            int delta = (int) (Math.random() * Integer.MAX_VALUE);
-            boolean increment = Math.random() < 0.5;
-            System.out.println("Random args: initValue="+initValue+", delta="+delta+", increment="+increment);
-            addOrSubtractAndPrint(initValue, delta, increment);
-        } else {
-            System.out.println("Вы ввели неправильное число");
+        switch (methodNumber) {
+            case 1:
+                greetings();
+                break;
+
+            case 2:
+                int a = (int) (Math.random() * Integer.MAX_VALUE);
+                int b = (int) (Math.random() * Integer.MAX_VALUE);
+                int c = (int) (Math.random() * Integer.MAX_VALUE);
+                System.out.println("Random args: a="+a+", b="+b+", c="+c);
+                checkSign(a,b,c);
+                break;
+
+            case 3:
+                selectColor();
+                break;
+
+            case 4:
+                compareNumbers();
+                break;
+
+            case 5:
+                int initValue = (int) (Math.random() * Integer.MAX_VALUE);
+                int delta = (int) (Math.random() * Integer.MAX_VALUE);
+                boolean increment = Math.random() < 0.5;
+                System.out.println("Random args: initValue="+initValue+", delta="+delta+", increment="+increment);
+                addOrSubtractAndPrint(initValue, delta, increment);
+                break;
+
+            default:
+                System.out.println("Вы ввели неправильное число");
+                break;
         }
 
     }
