@@ -9,6 +9,9 @@ public class MainApp7 {
         int[][] arr1 = {{-1,3,-4}, {0,5,0},{1,56,3}};
         System.out.println(sumOfPositiveElements(arr1));
 
+        System.out.println("----hw7.2----");
+        drawBox(5);
+
     }
 
     public static int sumOfPositiveElements(int[][] arr) {
@@ -21,5 +24,14 @@ public class MainApp7 {
             }
         }
         return sum;
+    }
+
+    public static void drawBox(int size) {
+        for(int i1 = 0; i1 < size; i1++){
+            for(int i2 = 0; i2 < size; i2++){
+                System.out.print("* ");
+            }
+            System.out.print("\n");
+        }
     }
 }
