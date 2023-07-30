@@ -19,6 +19,10 @@ public class MainApp7 {
         setNullOnDiagonal(arr2);
         System.out.println(Arrays.deepToString(arr2));
 
+        System.out.println("----hw7.4----");
+        int[][] arr3 = {{1,3,-4}, {-4,5,-19},{1,-56,3}};
+        System.out.println(findMax(arr3));
+
     }
 
     public static int sumOfPositiveElements(int[][] arr) {
@@ -53,5 +57,17 @@ public class MainApp7 {
                 }
             }
         }
+    }
+
+    public static int findMax(int[][] array) {
+        int result = Integer.MIN_VALUE;
+        for(int i1 = 0; i1 < array.length;i1++) {
+            for(int i2 = 0; i2 < array[i1].length;i2++){
+               if( array[i1][i2] > result) {
+                   result = array[i1][i2];
+               }
+            }
+        }
+        return result;
     }
 }
