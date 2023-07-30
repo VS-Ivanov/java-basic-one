@@ -1,5 +1,7 @@
 package ru.otus.vadim.ivanov.java.basic.lesson7;
 
+import java.util.Arrays;
+
 public class MainApp7 {
 
     public static void main(String[] args) {
@@ -11,6 +13,11 @@ public class MainApp7 {
 
         System.out.println("----hw7.2----");
         drawBox(5);
+
+        System.out.println("----hw7.3----");
+        int[][] arr2 = {{-1,3,-4}, {4,5,19},{1,56,3}};
+        setNullOnDiagonal(arr2);
+        System.out.println(Arrays.deepToString(arr2));
 
     }
 
@@ -32,6 +39,19 @@ public class MainApp7 {
                 System.out.print("* ");
             }
             System.out.print("\n");
+        }
+    }
+
+    public static void setNullOnDiagonal(int[][] arr) {
+        int[] offset = {0,0};
+        for(int i1 = 0; i1 < arr.length; i1++) {
+            for(int i2 = 0; i2 < arr[i1].length; i2++) {
+                if( (offset[0] == i1) && (offset[1] == i2)) {
+                    arr[i1][i2] = 0;
+                    offset[0]++;
+                    offset[1]++;
+                }
+            }
         }
     }
 }
