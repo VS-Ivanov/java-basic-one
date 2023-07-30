@@ -23,6 +23,13 @@ public class MainApp7 {
         int[][] arr3 = {{1,3,-4}, {-4,5,-19},{1,-56,3}};
         System.out.println(findMax(arr3));
 
+        System.out.println("----hw7.5----");
+        int[][] arr4 = {{1,3,34}};
+        System.out.println(sumOfSecondArrRaw(arr4));
+
+        int[][] arr5 = {{1,3,34},{4,5,89}};
+        System.out.println(sumOfSecondArrRaw(arr5));
+
     }
 
     public static int sumOfPositiveElements(int[][] arr) {
@@ -69,5 +76,17 @@ public class MainApp7 {
             }
         }
         return result;
+    }
+
+    public static int sumOfSecondArrRaw(int[][] array) {
+        if(array.length < 2) {
+            return  -1;
+        } else {
+            int sum = 0;
+            for (int i = 0; i < array[1].length;i++) {
+                sum += array[1][i];
+            }
+            return sum;
+        }
     }
 }
