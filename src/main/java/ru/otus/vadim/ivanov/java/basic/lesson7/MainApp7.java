@@ -82,12 +82,13 @@ public class MainApp7 {
     public static int sumOfSecondArrRaw(int[][] array) {
         if(array.length < 2) {
             return  -1;
-        } else {
-            int sum = 0;
-            for (int i = 0; i < array[1].length;i++) {
-                sum += array[1][i];
-            }
-            return sum;
         }
+
+        int sum = 0;
+        for (int i = 0; i < array[1].length;i++) {
+            sum += array[1][i];
+        }
+
+        return sum;
     }
 }
