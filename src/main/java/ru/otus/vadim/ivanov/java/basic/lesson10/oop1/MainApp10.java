@@ -28,5 +28,31 @@ public class MainApp10 {
             }
         }
 
+        System.out.println("----Коробка----");
+        MagicBox MBox = new MagicBox(75,50,50, "green");
+
+        MBox.info();
+
+        MBox.setColor("black");
+        MBox.info();
+
+        MBox.put("rabbit");
+
+        MBox.open();
+        MBox.put("rabbit");
+        MBox.close();
+
+        MBox.info();
+
+        String Surprise  = MBox.takeOut();
+
+        if(Surprise == null) {
+            MBox.open();
+            Surprise = MBox.takeOut();
+        }
+
+        MBox.info();
+
+
     }
 }
