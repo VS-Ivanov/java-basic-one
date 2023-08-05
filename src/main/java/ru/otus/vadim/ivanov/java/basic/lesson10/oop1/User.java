@@ -9,7 +9,7 @@ public class User {
 
     private String email;
 
-    public void User(String Surname, String FirstName, String Patronymic, int BirthYear, String email) {
+    public User(String Surname, String FirstName, String Patronymic, int BirthYear, String email) {
         this.Surname =  Surname;
         this.FirstName = FirstName;
         this.Patronymic = Patronymic;
@@ -22,5 +22,9 @@ public class User {
         System.out.println("ФИО: "+Surname+" "+FirstName+" "+Patronymic);
         System.out.println("Год рождения: "+BirthYear);
         System.out.println("e-mail:"+email);
+    }
+
+    public int getBirthYear() {
+        return BirthYear;
     }
 }
