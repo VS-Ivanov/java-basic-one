@@ -7,7 +7,7 @@ public class MainApp10 {
         System.out.println("----hw10.oop1----");
 
 
-        User[] Users  = {
+        User[] users  = {
                 new User("Иванов", "Иван", "Иванович", 1967, "ivanov@hotmail.com"),
                 new User("Лиховидов", "Павел", "Андреевич", 1977, "liho@xxx.ru"),
                 new User("Иванов", "Владислав", "Семенович", 1988, "vlad@gmail.com"),
@@ -22,37 +22,36 @@ public class MainApp10 {
 
         int CurrentYear = Year.now().getValue();
 
-        for(int i=0; i < Users.length; i++) {
-            if(CurrentYear - Users[i].getBirthYear() >= 40) {
-                Users[i].info();
+        for(int i=0; i < users.length; i++) {
+            if(CurrentYear - users[i].getBirthYear() >= 40) {
+                users[i].info();
             }
         }
 
         System.out.println("----Коробка----");
-        MagicBox MBox = new MagicBox(75,50,50, "green");
+        MagicBox mBox = new MagicBox(75,50,50, "green");
 
-        MBox.info();
+        mBox.info();
 
-        MBox.setColor("black");
-        MBox.info();
+        mBox.setColor("black");
+        mBox.info();
 
-        MBox.put("rabbit");
+        mBox.put("rabbit");
 
-        MBox.open();
-        MBox.put("rabbit");
-        MBox.close();
+        mBox.open();
+        mBox.put("rabbit");
+        mBox.close();
 
-        MBox.info();
+        mBox.info();
 
-        String Surprise  = MBox.takeOut();
+        String surprise  = mBox.takeOut();
 
-        if(Surprise == null) {
-            MBox.open();
-            Surprise = MBox.takeOut();
+        if(surprise == null) {
+            mBox.open();
+            surprise = mBox.takeOut();
         }
 
-        MBox.info();
-
+        mBox.info();
 
     }
 }

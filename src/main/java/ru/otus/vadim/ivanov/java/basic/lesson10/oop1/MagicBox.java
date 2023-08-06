@@ -2,113 +2,113 @@ package ru.otus.vadim.ivanov.java.basic.lesson10.oop1;
 
 public class MagicBox {
     //ширина коробки
-    private int Width;
+    private int width;
 
     //высота коробки
-    private int Height;
+    private int height;
 
     //глубина коробки
-    private int Length;
+    private int length;
 
     //цвет коробки
-    private String Color;
+    private String color;
 
     //признак открытости :)
-    private Boolean IsOpened;
+    private Boolean isOpened;
 
     //некое содержимое
-    private String MagicContent;
+    private String magicContent;
 
     //создаем коробку
-    public MagicBox(int Width, int Height, int Length, String Color) {
-        this.Width = Width;
-        this.Height = Height;
-        this.Length = Length;
-        this.Color = Color;
+    public MagicBox(int width, int height, int length, String color) {
+        this.width = width;
+        this.height = height;
+        this.length = length;
+        this.color = color;
 
-        this.IsOpened = false;
+        this.isOpened = false;
 
         //когда коробка создается в ней ничего нет
-        this.MagicContent = null;
+        this.magicContent = null;
     }
 
     //открываем коробку
     public void open() {
-        if(IsOpened == true) {
+        if(isOpened == true) {
             System.out.println("Коробка уже открыта, остановись!");
             return;
         }
 
         System.out.println("Открываем нашу чудесную коробочку...");
-        IsOpened = true;
+        isOpened = true;
 
     }
 
     //закрываем коробку
     public void close() {
-        if(IsOpened == false) {
+        if(isOpened == false) {
             System.out.println("Коробка уже закрыта, не делай этого!");
             return;
         }
         System.out.println("Закрываем коробку с чудесами...");
-        IsOpened = false;
+        isOpened = false;
 
     }
 
     //перекрашиваем коробку
     public void setColor(String color) {
-        this.Color = color;
+        this.color = color;
     }
 
     //печатаем инфо о коробке
     public void info() {
         System.out.println("У нас есть вот такая чудесная коробка!");
-        System.out.println(Width+" в ширину");
-        System.out.println(Height+" в высоту");
-        System.out.println(Length+" в глубину");
-        System.out.println("И цвета "+Color);
+        System.out.println(width +" в ширину");
+        System.out.println(height +" в высоту");
+        System.out.println(length +" в глубину");
+        System.out.println("И цвета "+ color);
 
-        if(IsOpened == true) {
+        if(isOpened == true) {
             System.out.println("Она открыта");
         }
 
-        if(MagicContent != null) {
+        if(magicContent != null) {
             System.out.println("И в ней что-то лежит...");
         }
     }
 
     //закидываем что-то в коробку
     public void put(String Something) {
-        if(IsOpened == false) {
+        if(isOpened == false) {
             System.out.println("Коробка закрыта! Ничего не получается!");
             return;
         }
 
-        if(MagicContent != null) {
+        if(magicContent != null) {
             System.out.println("В коробке уже что-то лежит!");
             return;
         }
 
-        MagicContent = Something;
+        magicContent = Something;
         System.out.println("Нечто теперь покоится на дне нашей коробки.");
 
     }
 
     //достаем что-то из нее
     public String takeOut() {
-        if(IsOpened == false) {
+        if(isOpened == false) {
             System.out.println("Коробка закрыта! Ничего не получается!");
             return null;
         }
 
-        if(MagicContent == null) {
+        if(magicContent == null) {
             System.out.println("В коробке совсем ничего нет!");
             return null;
         }
 
         System.out.println("Нечто выползает из коробки, держи крепко...");
-        String Something = MagicContent;
-        MagicContent = null;
+        String Something = magicContent;
+        magicContent = null;
         return Something;
     }
 
