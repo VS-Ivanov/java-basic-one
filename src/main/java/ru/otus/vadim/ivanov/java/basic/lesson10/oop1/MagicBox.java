@@ -78,7 +78,7 @@ public class MagicBox {
     }
 
     //закидываем что-то в коробку
-    public void put(String Something) {
+    public void put(String something) {
         if(isOpened == false) {
             System.out.println("Коробка закрыта! Ничего не получается!");
             return;
@@ -89,7 +89,7 @@ public class MagicBox {
             return;
         }
 
-        magicContent = Something;
+        magicContent = something;
         System.out.println("Нечто теперь покоится на дне нашей коробки.");
 
     }
@@ -107,9 +107,9 @@ public class MagicBox {
         }
 
         System.out.println("Нечто выползает из коробки, держи крепко...");
-        String Something = magicContent;
+        String something = magicContent;
         magicContent = null;
-        return Something;
+        return something;
     }
 
 }
