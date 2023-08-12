@@ -2,12 +2,12 @@ package ru.otus.vadim.ivanov.java.basic.lesson12.oop3;
 
 public class Cat {
 
-    String name;
+    private String name;
 
-    int appetite;
+    private int appetite;
 
     //сытость кода
-    boolean isFull;
+    private boolean isFull;
 
     public Cat(String name, int appetite) {
         this.name = name;
