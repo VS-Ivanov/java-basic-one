@@ -27,6 +27,26 @@ public class MainApp15 {
         increaseListItem(8,intList);
         System.out.println(intList);
 
+        //список сотрудников
+        ArrayList<Employee>  employees = new ArrayList<>();
+        employees.add(new Employee("Иван",41));
+        employees.add(new Employee("Николай", 35));
+        employees.add(new Employee("Даниил",27));
+
+        System.out.println(getEmployeesNames(employees));
+
+        //получим двух сотрудников старше 30
+        ArrayList<Employee> employeesOlder30 = getEmployeesOlderThan(30,employees);
+        System.out.println(employeesOlder30);
+
+        //проверяем что средний возраст не превышает 35 лет
+        System.out.println(checkAvgAgeMoreThan(35,employees));
+
+        //проверяем что средний возраст превышает 30 лет
+        System.out.println(checkAvgAgeMoreThan(30, employees));
+
+        //получаем самого молодого сотрудника - Даниил
+        System.out.println(getYoungestEmployee(employees));
     }
 
     //метод возвращает список последовательных значений
@@ -83,5 +103,67 @@ public class MainApp15 {
         }
     }
 
+    //метод получает список сотрудников и возвращает список их имен
+    public static ArrayList getEmployeesNames(ArrayList<Employee> employees) {
+        ArrayList<String> employeesNames = new ArrayList<>();
+
+        for(Employee employeeItem: employees) {
+            employeesNames.add(employeeItem.getName());
+        }
+
+        return employeesNames;
+    }
+
+    //метод принимает минимальный возраст, список сотрудников и возвращает список сотрудников возраст которых больше или равен указанному
+    public static ArrayList getEmployeesOlderThan(int minAge, ArrayList<Employee> employees) {
+        ArrayList<Employee> employeesFiltered = new ArrayList<>();
+
+        for(Employee employeeItem: employees) {
+            if(employeeItem.getAge() >= minAge) {
+                employeesFiltered.add(employeeItem);
+            }
+        }
+
+        return  employeesFiltered;
+    }
+
+    //метод, принимающий в качестве аргумента список сотрудников и минимальный средний возраст, и проверяющий что средний возраст сотрудников превышает указанный аргумент
+    public static boolean checkAvgAgeMoreThan(int minAvgAge, ArrayList<Employee> employees) {
+
+        if(employees.size() == 0) {
+            return false;
+        }
+
+        int sumEmployeesAge = 0;
+        int countEmployees = 0;
+        for(Employee employeeItem: employees) {
+            sumEmployeesAge += employeeItem.getAge();
+            countEmployees++;
+        }
+
+        double averageAge = sumEmployeesAge/countEmployees;
+        if(averageAge > minAvgAge) {
+            return true;
+        }
+
+        return false;
+    }
+
+    //метод возвращает самого молодого сотрудника
+    public static Employee getYoungestEmployee(ArrayList<Employee> employees) {
+
+        if(employees.size() == 0) {
+            return  null;
+        }
+
+        Employee youngestEmployee = employees.get(0);
+        for(int i=1; i < employees.size(); i++) {
+            if(employees.get(i).getAge() < youngestEmployee.getAge()) {
+                youngestEmployee = employees.get(i);
+            }
+        }
+
+        return youngestEmployee;
+    }
 
 }
