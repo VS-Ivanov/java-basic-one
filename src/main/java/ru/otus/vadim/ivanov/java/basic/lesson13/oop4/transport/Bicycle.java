@@ -1,6 +1,15 @@
 package ru.otus.vadim.ivanov.java.basic.lesson13.oop4.transport;
 
-public class Bicycle extends Transport implements Movable {
+public class Bicycle implements Movable {
+    //наименование транспорта
+    private String name;
+
+    //затраты на перемещение
+    private int moveCost;
+
+    //ограничения по местности
+    private Landscape[] landscapeRestriction;
+
 
     public Bicycle(String name) {
         this.name = name;

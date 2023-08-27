@@ -1,6 +1,18 @@
 package ru.otus.vadim.ivanov.java.basic.lesson13.oop4.transport;
 
-public class Horse extends Transport implements Movable {
+public class Horse implements Movable {
+    //имя
+    private String name;
+
+    //выносливость в ед.
+    private int endurance;
+
+    //затраты на перемещение
+    private int moveCost;
+
+    //ограничения по местности
+    private Landscape[] landscapeRestriction;
+
     public Horse(String name, int endurance) {
         this.name = name;
         this.endurance = endurance;
