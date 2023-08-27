@@ -1,5 +1,7 @@
 package ru.otus.vadim.ivanov.java.basic.lesson13.oop4.transport;
 
+import ru.otus.vadim.ivanov.java.basic.lesson13.oop4.Human;
+
 public class FueledTransport implements Movable {
     //наименование транспорта
     private String name;
@@ -45,4 +47,5 @@ public class FueledTransport implements Movable {
         System.out.println("У транспорта "+name+" осталось "+fuel+" л. топлива");
         return  true;
     }
+
 }

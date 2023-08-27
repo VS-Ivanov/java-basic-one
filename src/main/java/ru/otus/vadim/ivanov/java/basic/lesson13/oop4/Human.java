@@ -1,6 +1,7 @@
 package ru.otus.vadim.ivanov.java.basic.lesson13.oop4;
 
 import ru.otus.vadim.ivanov.java.basic.lesson13.oop4.transport.Bicycle;
+import ru.otus.vadim.ivanov.java.basic.lesson13.oop4.transport.HumanDriven;
 import ru.otus.vadim.ivanov.java.basic.lesson13.oop4.transport.Landscape;
 import ru.otus.vadim.ivanov.java.basic.lesson13.oop4.transport.Movable;
 
@@ -31,6 +32,11 @@ public class Human {
 
         System.out.println("Человек "+name+" садится на транспорт!");
         currentTransport = transport;
+
+        //если транспорту требуется доступ к человеку, передаем ссылку
+        if(transport instanceof HumanDriven) {
+            ((HumanDriven) transport).getOn(this);
+        }
     }
 
     //покидаем текущий транспорт
@@ -79,23 +85,19 @@ public class Human {
         //транспорт есть, едем на транспорте
         System.out.println("У человека "+name+" есть транспорт! Едем на нем!");
 
-        //если наш транспорт велосипед, проверим, что хватит сил крутить педали
-        if(currentTransport.getClass() == Bicycle.class) {
-            int enduranceConsumption = distance * ((Bicycle) currentTransport).getCost();
-            if(enduranceConsumption > endurance) {
-                System.out.println("Человеку "+name+" не хватит сил, чтобы проехать на велосипеде "+distance+" км");
-                return false;
-            }
-            //сил хватает, пробуем ехать
-            if(currentTransport.move(distance,landscape)) {
-                endurance -= enduranceConsumption;
-                System.out.println("У человека "+name+" осталось "+endurance+" выносливости после езды на велосипеде");
-                return true;
-            }
-            // что-то пошло не так
-            return false;
-        }
-
         return currentTransport.move(distance,landscape);
+    }
+
+    //доступ к выносливости
+    public int getEndurance() {
+        return this.endurance;
+    }
+
+    public void setEndurance(int endurance) {
+        this.endurance = endurance;
+    }
+
+    public String toString() {
+        return this.name;
     }
 }

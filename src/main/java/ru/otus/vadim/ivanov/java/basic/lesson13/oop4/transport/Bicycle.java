@@ -1,6 +1,8 @@
 package ru.otus.vadim.ivanov.java.basic.lesson13.oop4.transport;
 
-public class Bicycle implements Movable {
+import ru.otus.vadim.ivanov.java.basic.lesson13.oop4.Human;
+
+public class Bicycle implements Movable, HumanDriven {
     //наименование транспорта
     private String name;
 
@@ -10,17 +12,15 @@ public class Bicycle implements Movable {
     //ограничения по местности
     private Landscape[] landscapeRestriction;
 
+    //ссылка на водителя
+    private Human driver;
+
 
     public Bicycle(String name) {
         this.name = name;
         this.moveCost = 5;
 
         this.landscapeRestriction = new Landscape[] {Landscape.SWAMP};
-    }
-
-    //возвращаем затраты на езду для нашего велика
-    public int getCost() {
-        return this.moveCost;
     }
 
     public boolean move(int distance, Landscape landscape) {
@@ -33,8 +33,36 @@ public class Bicycle implements Movable {
             }
         }
 
+        //проверим, что хватит сил крутить педали
+        int enduranceConsumption = distance * moveCost;
+        if(enduranceConsumption > driver.getEndurance()) {
+            System.out.println("Человеку "+driver+" не хватит сил, чтобы проехать на велосипеде "+distance+" км");
+            return false;
+        }
+
+        //сил хватает, пробуем ехать
+        driver.setEndurance(driver.getEndurance() - enduranceConsumption);
+        System.out.println("У человека "+driver+" осталось "+driver.getEndurance()+" выносливости после езды на велосипеде");
+
         System.out.println("Велосипед "+name+" проехал "+distance+" км. по местности "+landscape);
-        return  true;
+        return true;
     }
+
+    public void getOn(Human driver) {
+        if(this.driver != null) {
+            System.out.println("У велосипеда "+name+" уже есть водитель!");
+            return;
+        }
+        this.driver = driver;
+    }
+
+    public void getOff() {
+        if(this.driver == null) {
+            System.out.println("У велосипеда "+name+" нет водителя!");
+            return;
+        }
+        this.driver = null;
+    }
+
 
 }
