@@ -37,6 +37,7 @@ public class Human {
     public void leaveTransport() {
         if(currentTransport == null) {
             System.out.println("У человека "+name+" нет транспорта!");
+            return;
         }
 
         System.out.println("Человек "+name+" покидает транспорт!");
