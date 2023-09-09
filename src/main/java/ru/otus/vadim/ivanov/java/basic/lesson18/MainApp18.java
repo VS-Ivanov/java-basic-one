@@ -44,7 +44,7 @@ public class MainApp18 {
     }
 
     public static void readTxtFile (File file) throws IOException {
-        try(BufferedInputStream in = new BufferedInputStream(new FileInputStream(file.getName()))) {
+        try(BufferedInputStream in = new BufferedInputStream(new FileInputStream(file))) {
             byte[] buf = new byte[64];
             int n = in.read(buf);
             while (n > 0) {
@@ -55,7 +55,7 @@ public class MainApp18 {
     }
 
     public static void writeTxtFile(File file, String str) throws IOException {
-        try(BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(file.getName()))) {
+        try(BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(file))) {
             out.write(str.getBytes(StandardCharsets.UTF_8));
             out.flush();
         }
