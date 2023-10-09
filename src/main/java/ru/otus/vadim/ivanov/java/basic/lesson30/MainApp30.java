@@ -31,6 +31,7 @@ public class MainApp30 {
         if(lastOneIndex == arr.length-1) {
             return new int[0];
         }
+        //возвращаем все что идет после последней единицы
         return Arrays.copyOfRange(arr,lastOneIndex+1,arr.length);
     }
 
