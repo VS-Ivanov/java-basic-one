@@ -24,11 +24,12 @@ public class Box <T extends Fruit> {
         if(box == null) {return false;}
         if(box == this) {return true;}
 
-        return ((this.weight() - box.weight()) == 0);
+        return (this.weight() == box.weight());
     }
 
     //пересыпаем фрукты из текущей коробки в другую
     public void transfer(Box<? super T> box) {
+        if((box == null) || (box == this) ) {return;}
         for(T fruit: fruits) {
             box.addFruit(fruit);
             //fruits.remove(fruit); - ConcurrentModificationException :)
